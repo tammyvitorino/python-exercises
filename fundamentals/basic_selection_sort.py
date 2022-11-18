@@ -29,17 +29,17 @@ def get_vector():
     for i in range(array_size):
         array.append(random.random())
     return array
-# Generator?
-
 
 def selection_sort(array):
-    for i in range(len(array)):
+    for i in range(len(array) - 1):
         min_idx = i
-        for j in range(i+1, len(array)):
+        for j in range(i + 1, len(array)):
             if array[min_idx] > array[j]:
                 min_idx = j
 
         array[i], array[min_idx] = array[min_idx], array[i]
+
+    return array
 
 
 array = get_vector()
