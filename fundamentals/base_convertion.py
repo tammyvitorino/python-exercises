@@ -31,7 +31,6 @@ def convert(numDecimal, base):
     else:
         return int(str(convert(int(numDecimal / base), base)) + str(x))
 
-
 decimal_numbers = []
 
 x = int(input())
@@ -43,7 +42,7 @@ for number in decimal_numbers:
     converted_list = []
     for i in range(2, 10):
         converted_list.append(convert(number, i))
-    print(' '.join(str(x) for x in converted_list))^
+    print(' '.join(str(x) for x in converted_list))
 
 # Solução sem recursividade
 def convertion(number, base):
