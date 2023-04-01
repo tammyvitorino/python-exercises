@@ -23,7 +23,7 @@ linha deve conter as oito representações do número, uma para cada base, separ
 espaço em branco. As conversões devem ser apresentadas
 """
 
-
+# Solução usando recursividade
 def convert(numDecimal, base):
     x = (numDecimal % base)
     if (numDecimal < base):
@@ -43,4 +43,25 @@ for number in decimal_numbers:
     converted_list = []
     for i in range(2, 10):
         converted_list.append(convert(number, i))
-    print(' '.join(str(x) for x in converted_list))
+    print(' '.join(str(x) for x in converted_list))^
+
+# Solução sem recursividade
+def convertion(number, base):
+  converted = ''
+  while number != 0:
+    converted = str(int(number) % base) + converted
+    number = int(number) // base
+  return converted
+
+
+numbers = []
+input_received = input()
+
+while input_received != '-1':
+  numbers.append(input_received)
+  input_received = input()
+
+for number in numbers:
+  converted = []
+  for i in range(2, 10):
+    print(convertion(number, i), end=(' ' if i < 9 else '\n'))
